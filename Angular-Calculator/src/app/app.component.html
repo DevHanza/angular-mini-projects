@@ -1,0 +1,250 @@
+<div
+  class="min-w-screen min-h-screen bg-teal-900 flex items-center justify-center px-5 py-5"
+>
+  <div
+    class="w-full rounded-xl shadow-xl text-gray-800 relative overflow-hidden"
+    style="max-width: 350px"
+  >
+    <h1 class="text-center text-white py-10 text-3xl font-bold">
+      {{ title }}
+    </h1>
+
+    <!-- calculator screen -->
+    <div
+      class="w-full h-40 bg-gradient-to-b from-gray-800 to-gray-700 text-right"
+    >
+      <!-- operator screen -->
+      <div class="w-full py-5 px-6 text-2xl text-white font-thin">
+        {{ subScreen }}
+      </div>
+
+      <!-- number screen -->
+      <div class="w-full py-5 px-6 text-6xl text-white font-thin"
+      >
+        {{ mainScreen | number }} {{errScreen}}
+      </div>
+
+      
+    </div>
+    <!-- calculator button area -->
+    <div class="w-full bg-gradient-to-b from-red-500 to-red-800">
+      <!-- first button row -->
+
+      <div class="flex w-full">
+        <!-- clear button -->
+        <div class="w-2/4 border-b border-r border-red-400">
+          <button
+            (click)="clearScreen()"
+            class="w-full h-16 outline-none hover:bg-red-700 hover:bg-opacity-20 text-white text-xl font-light"
+          >
+            C
+          </button>
+        </div>
+        <!-- end clear button -->
+        <!-- percentage button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getOperator('%')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            %
+          </button>
+        </div>
+        <!-- end percentage button -->
+        <!-- divide button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getOperator('/')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            /
+          </button>
+        </div>
+        <!-- end divide button -->
+      </div>
+      <!-- end first button row -->
+
+      <!-- start second button area -->
+      <div class="flex w-full">
+        <!-- number 7 button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+            (click)="getNumber('7')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            7
+          </button>
+        </div>
+        <!-- number 7 button end -->
+
+        <!-- number 8 button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getNumber('8')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            8
+          </button>
+        </div>
+        <!-- number 8 button end -->
+
+        <!-- number 9 button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getNumber('9')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            9
+          </button>
+        </div>
+        <!-- number 9 button end -->
+        <!-- multiplication button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getOperator('*')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            *
+          </button>
+        </div>
+        <!-- multiplication button end -->
+      </div>
+
+      <!-- end second button row -->
+
+      <!-- start third button area -->
+      <div class="flex w-full">
+        <!-- number 4 button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getNumber('4')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            4
+          </button>
+        </div>
+        <!-- number 4 button end -->
+
+        <!-- number 5 button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getNumber('5')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            5
+          </button>
+        </div>
+        <!-- number 5 button end -->
+
+        <!-- number 6 button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getNumber('6')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            6
+          </button>
+        </div>
+        <!-- number 6 button end -->
+
+        <!-- minus button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getOperator('-')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            -
+          </button>
+        </div>
+        <!-- minus button end -->
+      </div>
+
+      <!-- end Third button row -->
+
+      <!-- start Fourth button area -->
+      <div class="flex w-full">
+        <!-- number 1 button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getNumber('1')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            1
+          </button>
+        </div>
+        <!-- number 1 button end -->
+
+        <!-- number 2 button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getNumber('2')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            2
+          </button>
+        </div>
+        <!-- number 2 button end -->
+
+        <!-- number 3 button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getNumber('3')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            3
+          </button>
+        </div>
+        <!-- number 3 button end -->
+        <!-- plus button -->
+        <div class="w-1/4 border-r border-b border-red-400 text-white">
+          <button
+          (click)="getOperator('+')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            +
+          </button>
+        </div>
+        <!-- plus button end -->
+      </div>
+
+      <!-- end Fourth button row -->
+
+      <!-- start Fifth button row -->
+
+      <div class="flex w-full">
+        <div class="w-1/4 border-r border-red-400 text-white">
+          <!-- number 0 button -->
+          <button
+          (click)="getNumber('0')"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            0
+          </button>
+          <!-- end number 0 button -->
+        </div>
+        <div class="w-1/4 border-r border-red-400 text-white">
+          <!-- decimal button -->
+          <button
+          
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            .
+          </button>
+          <!-- end decimal button -->
+        </div>
+        <div class="w-2/4 border-r border-red-400 text-white">
+          <!-- Equal button -->
+          <button
+          (click)="calculate()"
+            class="w-full h-16 outline-none focus:outline-none hover:bg-red-700 hover:bg-opacity-50 text-xl font-light"
+          >
+            =
+          </button>
+          <!-- end Equal button -->
+        </div>
+      </div>
+      <!-- start Fifth button row -->
+    </div>
+    <!-- end calculator nutton area -->
+  </div>
+</div>
